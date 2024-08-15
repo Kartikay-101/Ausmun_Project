@@ -26,8 +26,8 @@
 </style>
 </head>
 <body class="bg-gray-100">
-  <!-- Header Begin -->
-  <header id="header">
+    <!-- Header Begin -->
+    <header id="header">
     <div class="logo">
         <a href="../../index.html"><img src="../images/Homepage/Logo.png" alt=""></a>
     </div>
@@ -84,8 +84,8 @@
     </nav>
     <div id="hamburger">&#9776;</div>
     <div id="cross">&times;</div>
-</header>
-<!-- Header End-->
+    </header>
+    <!-- Header End-->
     <header class="header-background1 h-96 flex items-center justify-center  text-white md:bg-cover ">
 
     
@@ -101,7 +101,7 @@
 
             <div class="text-gray-700 space-y-6 text-center fade-in">
 
-               
+
                 <p>August 15, 1947 is one of the most significant dates in history. It was on this day that the dominion of India was declared an independent nation. Australia became the first country in the world to hoist the flag of independent India just seven hours after this declaration. And since then, the two nations have enjoyed an amicable relationship; however in the new world order - the amiability has to be extended, rethought and propagated.</p>
                 <p>Aussie-Indo relations date back to the pre-colonial times. What started as a trade partnership to facilitate the colonial white settlement, has since then blossomed into a diplomatic friendship with both countries not only forging political, economic and military ties; but also sharing a strong cultural connection with cinema, music and international sports like cricket and badminton. This gradual development of diplomatic, cultural, economic, and strategic ties over time has laid the foundation for a strong and enduring friendship with shared interests between the two nations. And one such shared interest includes education.</p>
                 <p>Since the independence of India, Australia has expressed its desire of having Indian students studying there. AUSMUN is an official partner of Australia Unlimited, a dynamic initiative by the Australian government aimed at showcasing the limitless potential and opportunities that Australia has to offer on the world stage. Australia Unlimited, which celebrates talented Australians in ausbiz, science, innovation, design, fashion, the arts and in humanitarian endeavors. This organization is a key one in extending <b>AZ-INDO</b> relationships.</p>
@@ -112,16 +112,41 @@
         </div>
 </div>
 <script>
-  window.addEventListener('scroll', function() {
+    let header = document.getElementById("header")
+    let nav = document.getElementById("nav");
+    let ham = document.getElementById("hamburger");
+    let cross = document.getElementById("cross");
+
+    ham.addEventListener("click",()=>{
+        ham.style.display = "none"
+        cross.style.display = "block"
+        header.style.backgroundColor = "black"
+        if(nav.classList != "show"){
+            nav.style.zIndex = "9999"
+            nav.classList.add("show")
+        }
+
+    })
+
+    cross.addEventListener("click",()=>{
+        ham.style.display = "block"
+        cross.style.display = "none"
+        header.style.backgroundColor = "transparent"
+        if(nav.classList == "show"){
+            nav.classList.remove("show")
+        }
+    })
+</script>
+<script>
+    window.addEventListener('scroll', function() {
     const fadeInElements = document.querySelectorAll('.fade-in');
-  
     fadeInElements.forEach(element => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
         element.classList.add('visible');
-      } else {
+        } else {
         element.classList.remove('visible'); // Optional: to hide again when scrolling up
-      }
+        }
+        });
     });
-  });
 </script>

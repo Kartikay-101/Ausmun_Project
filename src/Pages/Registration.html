@@ -146,7 +146,6 @@
         prices and availability may vary.
       </h4>
     </div>
-
     <div
       class="view hidden md:flex flex-col items-end space-y-4 xl:w-1/2 xl:absolute -bottom-32 right-20"
     >
@@ -162,14 +161,15 @@
       </button>
     </div>
 
+
     <div
       class="view flex flex-col items-center space-y-4 mt-auto md:hidden px-5 py-10"
     >
-      <button
+      <!-- <button
         class="bg-black text-white w-full py-3 uppercase tracking-widest hover:bg-white hover:text-black rounded-full"
       >
         Campus Ambassador
-      </button>
+      </button> -->
       <button
         class="bg-black text-white w-full py-3 uppercase tracking-widest hover:bg-white hover:text-black rounded-full"
       >
@@ -177,7 +177,32 @@
       </button>
     </div>
 
-    
+    <script>
+      let header = document.getElementById("header")
+      let nav = document.getElementById("nav");
+      let ham = document.getElementById("hamburger");
+      let cross = document.getElementById("cross");
+  
+      ham.addEventListener("click",()=>{
+          ham.style.display = "none"
+          cross.style.display = "block"
+          header.style.backgroundColor = "black"
+          if(nav.classList != "show"){
+              nav.style.zIndex = "9999"
+              nav.classList.add("show")
+          }
+  
+      })
+  
+      cross.addEventListener("click",()=>{
+          ham.style.display = "block"
+          cross.style.display = "none"
+          header.style.backgroundColor = "transparent"
+          if(nav.classList == "show"){
+              nav.classList.remove("show")
+          }
+      })
+  </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

@@ -76,17 +76,17 @@ nav ul li:hover #committee,nav ul li:hover #Our_Organisation,nav ul li:hover #ab
 
 #committee{
     width: 600px;
-    height: 220px;
+    height: 260px;
 }
 
 #Our_Organisation{
     width: 140px;
-    height: 85px;
+    height: 100px;
 }
 
 #about{
     width: 220px;
-    height: 100px;
+    height: 150px;
 }
 
 #Register_button{
@@ -104,7 +104,8 @@ nav ul li:hover #committee,nav ul li:hover #Our_Organisation,nav ul li:hover #ab
 #Register_Now{
     position: absolute;
     top: 30px;
-    width: 100px;
+    width: 80%;
+    padding: 0%;
     height: 30px;
 }
 
@@ -393,15 +394,14 @@ nav.show{
         /* Footer Begin */
         footer {
             color: aliceblue;
-            background-color: #000000;
-            padding: 10px 30px;
+            background-color: #171717;
+            padding: 1px 185px;
         }
         
         .heading {
             font-size: 40px;
-            padding-bottom: 20px;
             padding-left: 20px;
-            font-style: normal;
+            font-family: 'Arial', sans-serif;
         }
         
         footer .container {
@@ -413,11 +413,12 @@ nav.show{
         }
         
         .item-1 {
-            padding-top: 150px;
+            padding-top: 50px;
+            padding-bottom: 100px;
         }
         
         .item-2 {
-            padding-top: 40px;
+            padding-top: 50px;
         }
         
         footer .container .item-1 .inner-items-1 {
@@ -437,20 +438,24 @@ nav.show{
             background: white;
             padding: 12px;
             display: inline-block;
-            width: 100%;
-            border-radius: 15px;
+            width: 86%;
+            border-radius: 50px;
             margin-top: 15px;
             transition: all .25s ease-in;
+            font-weight: bold;
+            font-size: 15px;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
         }
         
         footer .container .item-1 a:hover {
             color: white;
-            background: #171717;
+            background: #292727;
         }
         
         footer .container .item-2 {
             width: 100%;
-            max-width: 292px;
+            max-width: 230px;
             height: auto;
             position: relative;
         }
@@ -548,7 +553,7 @@ nav.show{
                 font-size: 24px;
             }
             footer .container .item-1 a {
-                width: 100%;
+                width: 70%;
                 font-size: 14px;
             }
             .para {
