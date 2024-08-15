@@ -438,7 +438,7 @@ nav.show{
             background: white;
             padding: 12px;
             display: inline-block;
-            width: 86%;
+            width: 92%;
             border-radius: 50px;
             margin-top: 15px;
             transition: all .25s ease-in;
@@ -511,7 +511,8 @@ nav.show{
                 text-align: center;
             }
             .item-1, .item-2, .item-3 {
-                padding-top: 20px;
+                padding-top: 10px;
+                padding-bottom: 0px;
             }
             .heading {
                 font-size: 32px;
@@ -536,9 +537,7 @@ nav.show{
             footer .container {
                 grid-template-columns: 1fr;
             }
-            .item-1, .item-2, .item-3 {
-                padding-top: 10px;
-            }
+            
             footer .container .item-2 {
                 max-width: 150px;
                 height: auto;
@@ -553,7 +552,7 @@ nav.show{
                 font-size: 24px;
             }
             footer .container .item-1 a {
-                width: 70%;
+                width: 80%;
                 font-size: 14px;
             }
             .para {
