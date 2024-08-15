@@ -570,6 +570,86 @@ nav.show{
         
         /* Footer End */
 
+        /* Introduction Begin  */
+@import url('https://fonts.googleapis.com/css2?family=Copperplate+Gothic+Light&display=swap');
+
+.floral-bg {
+    background-image: url('../images/Intro & Theme/background.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.floral1-bg {
+    background-image: url('../images/Intro & Theme/background1.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Introduction End  */
+
+/* Theme Begin  */
+@import url('https://fonts.googleapis.com/css2?family=Copperplate+Gothic+Light&display=swap');
+.header-background1 {
+    background-image: url('../images/Intro & Theme/image2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+
+.header-background1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(5px); /* Adjust the blur radius as needed */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+.header-content {
+    position: relative;
+    z-index: 1; /* Ensure the text is above the blurred background */
+    color: black; /* Set the text color to black */
+}
+.background-pattern {
+    background-image: url('../images/Intro & Theme/background1.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.fade-in {
+opacity: 0;
+transform: translateY(20px); /* Optional: Adds a small slide effect */
+transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+/* Theme End */
+
+        
         /* Registration Form Begin  */
 
         .fade-in {
@@ -592,6 +672,7 @@ nav.show{
             color: white;
             height: 87vh;
             opacity: 0.7;
+            z-index: -1;
         }
         
         body {
@@ -625,8 +706,11 @@ nav.show{
                 margin-left: px; 
             }
         }
-        /* Registration Form End                 */
-        
+        /* Registration Form End */
+
+
+
+
     /* MOBILE VIEW Begin */
     @media (max-width: 600px) {
 
