@@ -76,11 +76,11 @@ nav ul li:hover #committee,nav ul li:hover #Our_Organisation,nav ul li:hover #ab
 
 #committee{
     width: 600px;
-    height: 260px;
+    height: 270px;
 }
 
 #Our_Organisation{
-    width: 140px;
+    width: 400px;
     height: 100px;
 }
 
