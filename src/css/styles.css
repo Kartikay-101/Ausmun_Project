@@ -32,7 +32,7 @@ body {
 }
 header .logo{
     height: 65%;
-    padding-left: 8%;
+    /* padding-left: 8%; */
 }
 
 header .logo img{
@@ -80,13 +80,13 @@ nav ul li:hover #committee,nav ul li:hover #Our_Organisation,nav ul li:hover #ab
 }
 
 #Our_Organisation{
-    width: 400px;
+    width: 340px;
     height: 100px;
 }
 
 #about{
     width: 220px;
-    height: 150px;
+    height: 130px;
 }
 
 #Register_button{
@@ -100,23 +100,15 @@ nav ul li:hover #committee,nav ul li:hover #Our_Organisation,nav ul li:hover #ab
     cursor: pointer;
     position: relative;
 }
-
-#Register_Now{
-    position: absolute;
-    top: 30px;
-    width: 80%;
-    padding: 0%;
-    height: 30px;
-}
-
 nav ul li ul{
     position: absolute;
-    top: 20px;
+    top: 25px;
     display: flex;
     flex-direction: column;
     align-items: start;
     background-color: rgb(0, 0, 0);
     display: none;
+    border-radius: 10px;
 }
 nav ul li ul li{
     padding: 5px ;
@@ -153,7 +145,7 @@ nav.show{
 
 @media screen and (max-width:1320px){
     header{
-        padding: 0 10px;
+        padding: 0 25px;
     }
     
    
@@ -250,13 +242,13 @@ nav.show{
     nav ul li ul li a{
         font-size: 13px;
     }
-    /* #committee{ 
-        height: 300px;    
+     #committee{ 
+        height: 370px;    
     }
 
-    #about{
+    /* #about{
         height: 75px;
-    } */
+    }  */
 }
 
 
