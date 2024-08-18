@@ -238,7 +238,7 @@
                 ham.style.display = "none"
                 cross.style.display = "block"
                 header.style.backgroundColor = "black"
-                if(nav.classList != "show"){
+                if(!nav.classList.contains("show")){
                     nav.style.zIndex = "9999"
                     nav.classList.add("show")
                 }
@@ -249,7 +249,7 @@
                 ham.style.display = "block"
                 cross.style.display = "none"
                 header.style.backgroundColor = "transparent"
-                if(nav.classList == "show"){
+                if(nav.classList.contains("show")){
                     nav.classList.remove("show")
                 }
             })
