@@ -506,6 +506,16 @@ nav.show{
     overflow: hidden;
     width: 77%;
 }
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+.image-row img {
+    flex: 1;
+    max-width: 24.33%;
+    height: 102px;
+}
 @media (max-width: 768px) {
     
     .founder-photo {
@@ -532,6 +542,9 @@ nav.show{
     .founder-message-heading {
         text-align: center;
         padding-top: 2px; /* Adjusted padding for mobile view */
+    }
+    .image-row img {
+        height: 50px;
     }
 }
 
