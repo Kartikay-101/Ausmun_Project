@@ -493,7 +493,47 @@ nav.show{
 }
         /* About Us End  */
 
+.founder-photo {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+}
+.founder-photo img {
+    max-width: 225px;
+    border-radius: 5%;
+}
+.founder-message {
+    overflow: hidden;
+    width: 77%;
+}
+@media (max-width: 768px) {
+    
+    .founder-photo {
+        position: relative;
+        top: 7px;
+        padding-top: 10px;
+        padding-left: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    .founder-photo img {
+    max-width: 250px;
+    border-radius: 5%;
+    }
 
+    .founder-message {
+        text-align: justify;
+        width: 100%;
+    }
+
+    .founder-message-section h2 {
+        text-align: center;
+    }
+    .founder-message-heading {
+        text-align: center;
+        padding-top: 2px; /* Adjusted padding for mobile view */
+    }
+}
 
         /* Footer Begin */
         footer {
