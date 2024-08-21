@@ -688,7 +688,8 @@ nav.show{
         @media (max-width: 768px) {
             footer {
                 padding: 10px;
-                background-image: url('../images/Footer/1f00d2f302e3911c93f993abefbffeb11.png'); /* New background image for mobile view */
+                background-image: url('../images/Footer/1f00d2f302e3911c93f993abefbffeb11.png');
+                background-position: center;
             }
             .heading {
                 font-size: 28px;
@@ -712,7 +713,7 @@ nav.show{
                 font-size: 24px;
             }
             footer .container .item-1 a {
-                width: 80%;
+                width: 90%;
                 font-size: 14px;
             }
             .para {
