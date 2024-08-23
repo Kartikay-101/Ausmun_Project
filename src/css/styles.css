@@ -977,7 +977,12 @@ body {
 }
 
 
-
+.committe-heading {
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #fff;
+    font-family:cinzel;
+}
 
 .grid-container1 {
     display: grid;
@@ -1036,9 +1041,10 @@ a {
 }
 /*Responive design*/
     @media (max-width: 768px) {
-       
-    
-
+    .committe-heading{
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
     .grid-container1 {
         grid-template-columns: 1fr; /* Stack items in a single column */
         max-width: 100%; /* Allow full width on smaller screens */
@@ -1047,10 +1053,6 @@ a {
 
     .committe-container {
         padding: 20px; /* Reduce padding on smaller screens */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
     }
 }
 
