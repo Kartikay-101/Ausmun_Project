@@ -121,7 +121,7 @@ header {
 
 header .logo {
     height: 65%;
-    padding-left: 8%;
+    padding-left: 2%;
 }
 
 header .logo img {
@@ -139,7 +139,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 2px;
+    column-gap: 10px;
     list-style-type: none;
     text-transform: uppercase;
 
@@ -256,7 +256,9 @@ nav.show {
     header {
         padding: 0 10px;
     }
-
+    header .logo {
+        height: 65%;
+    }
 
     nav ul li ul {
         top: -10px;
@@ -374,16 +376,22 @@ nav.show {
 
 
 /* Header End*/
-
+.center-content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh; /* Full viewport height */
+}
 .center-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0%;
 }
 
 .center-logo {
-    width: 26%;
+    width: 400px;
     animation: liftUp 1s ease-in-out;
 }
 
@@ -410,7 +418,7 @@ nav.show {
 
 .countdown {
     position: relative;
-    width: 40%;
+    width: 545px;
     display: flex;
     justify-content: center;
     align-items: center;
