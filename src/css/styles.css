@@ -70,7 +70,7 @@ body {
 
 @media screen and (max-width : 550px) {
     .popup {
-        min-height: 45%;
+        min-height: 40%;
         border-radius: 25px;
     }
 
@@ -597,6 +597,11 @@ nav.show {
         padding-top: 2px;
         /* Adjusted padding for mobile view */
     }
+    .image-row {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
 
     .image-row img {
         height: 50px;
@@ -684,6 +689,7 @@ footer .container .item-2 :hover {
         background-size: center;
     }
     footer .container {
+        width: 300px;
         flex-direction: column-reverse;
         text-align: center;
         padding: 50px 0;
