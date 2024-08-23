@@ -618,6 +618,8 @@ footer {
 }
 
 footer .container {
+    width: 1320px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -960,6 +962,9 @@ body {
     .carousel img {
         height: 276px;
         object-fit: cover;
+    }
+    .container .item-1 .social{
+        justify-content: center;
     }
 }
 
