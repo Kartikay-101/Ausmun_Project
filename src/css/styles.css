@@ -606,6 +606,18 @@ nav.show {
     .image-row img {
         height: 50px;
     }
+    .indivi-heading {
+        font-size: 60px;
+        color: #FFFFFF;
+        font-weight: 600;
+        text-align: center;
+        text-shadow:
+            0 0 10px rgba(252, 28, 28, 0.4),
+            0 0 20px rgba(252, 28, 28, 0.4),
+            0 0 30px rgba(252, 28, 28, 0.4);
+
+        margin: 40px 0;
+    }
 }
 
 /* Footer Begin */
@@ -761,6 +773,21 @@ footer .container .item-2 :hover {
 
     footer .container .item-3 .promoting img {
         max-width: 100px;
+    }
+    .indivi-heading {
+        font-size: 37px;
+        color: #FFFFFF;
+        font-weight: 600;
+        text-align: center;
+        text-shadow:
+            0 0 10px rgba(252, 28, 28, 0.4),
+            0 0 20px rgba(252, 28, 28, 0.4),
+            0 0 30px rgba(252, 28, 28, 0.4);
+
+        margin: 40px 0;
+    }
+    .indivi-sub-heading{
+        font-size: 25px;
     }
 }
 
