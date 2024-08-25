@@ -518,7 +518,7 @@ nav.show {
 
 /* About Us Begin */
 .more-info-section {
-    background-image: linear-gradient(rgba(22, 22, 22, 0.7), rgb(70 66 66 / 86%)), url(../images/Homepage/Fort.jpg);
+    background-image: linear-gradient(rgb(0 0 0 / 70%), rgb(29 28 28 / 86%)), url(../images/Homepage/Fort.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1113,7 +1113,17 @@ a {
     z-index: 1;
   }
   
-  .contactus-background > * {
+  .contactus-background >/* Existing styles */
+.text12-lg {
+    font-size: 1.125rem; /* Default font size */
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 550px) {
+    .text12-lg {
+        font-size: 17px; /* Adjust font size for mobile view */
+    }
+} * {
     position: relative;
     z-index: 2; /* Ensures the form content is above the overlay */
   }
