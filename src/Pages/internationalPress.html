@@ -140,6 +140,32 @@
             </a>
         </div>
     </div>
+    <script>
+        let header = document.getElementById("header")
+        let nav = document.getElementById("nav");
+        let ham = document.getElementById("hamburger");
+        let cross = document.getElementById("cross");
+    
+        ham.addEventListener("click", () => {
+            ham.style.display = "none"
+            cross.style.display = "block"
+            header.style.backgroundColor = "black"
+            if (nav.classList != "show") {
+                nav.style.zIndex = "9999"
+                nav.classList.add("show")
+            }
+    
+        })
+    
+        cross.addEventListener("click", () => {
+            ham.style.display = "block"
+            cross.style.display = "none"
+            header.style.backgroundColor = "transparent"
+            if (nav.classList == "show") {
+                nav.classList.remove("show")
+            }
+        })
+        </script>
 </body>
 
 </html>
