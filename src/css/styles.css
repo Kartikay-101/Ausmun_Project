@@ -255,11 +255,9 @@ nav.show {
 }
 
 @media screen and (max-width:1320px) {
-    header {
-        padding: 0 10px;
-    }
-    header .logo {
-        height: 65%;
+    .application {
+        padding-right: 15px;
+        padding-left: 15px;
     }
 
     nav ul li ul {
@@ -268,6 +266,14 @@ nav.show {
 
     #hamburger {
         display: block;
+        padding-bottom: 35px;
+        padding-right: 10px;
+        color: rgb(255, 255, 255);
+    }
+    #cross {
+        
+        padding-bottom: 35px;
+        padding-right: 10px;
         color: rgb(255, 255, 255);
     }
 
@@ -350,9 +356,15 @@ nav.show {
 
 
 @media screen and (max-width:550px) {
-    header .logo img {
-        width: 130px;
+    
+    header .logo {
+        padding-left: 6px;
+        width: 107px;
+        height: auto;
+        padding-bottom: 42px;
+
     }
+
 
     nav.show {
         top: 150px;
