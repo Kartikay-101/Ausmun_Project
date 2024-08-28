@@ -177,18 +177,18 @@
 
         <!-- User Counts -->
         <div class="stats">
-            <div class="card">
+            <!-- <div class="card">
                 <h2 class="text-xl">Total Users</h2>
                 <p id="userCount" >0</p>
-            </div>
+            </div> -->
             <div class="card">
                 <h2 class="text-xl">Registered Users</h2>
                 <p id="registeredUsers" >0</p>
             </div>
-            <div class="card">
+            <!-- <div class="card">
                 <h2 class="text-xl">Users Registered Today</h2>
                 <p id="usersToday" >0</p>
-            </div>
+            </div> -->
         </div>
 
         <!-- User List -->
@@ -198,9 +198,17 @@
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Institution Name</th>
                         <th>Phone Number</th>
+                        <th>Parent's Phone Number</th>
                         <th>Email</th>
-                        <th>Location</th>
+                        <th>Age</th>
+                        <!-- <th>Committee Preference-1</th>
+                        <th>Committee Preference-2</th>
+                        <th>Portfolio Preference-1</th>
+                        <th>Portfolio Preference-2</th>
+                        <th>Prior Mun Experience</th>
+                        <th>Accommodation</th> -->
                     </tr>
                 </thead>
                 <tbody id="userList">
@@ -239,29 +247,78 @@
     <!-- Footer End -->
 
     <!-- JavaScript to Dynamically Update Dashboard -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Example Data (Replace with actual data)
-            const users = [
-                { name: "Kartikay Nautiyal", phone: "1234567890", email: "nauti@example.com", location: "Greater Noida", isRegistered: true, registrationDate: "2024-08-28" },
-                { name: "Jane Doe", phone: "0987654321", email: "jane@example.com", location: "Mumbai", isRegistered: true, registrationDate: "2024-08-27" }
-                // Add more user objects here
-            ];
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
-            const userCount = users.length;
-            const registeredUsers = users.filter(user => user.isRegistered).length;
-            const usersToday = users.filter(user => new Date(user.registrationDate).toDateString() === new Date().toDateString()).length;
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2uPHIXx_hwpF3zXR2eNu7jqczvvu8MQY",
+            authDomain: "theindiansummit-98ffa.firebaseapp.com",
+            projectId: "theindiansummit-98ffa",
+            storageBucket: "theindiansummit-98ffa.appspot.com",
+            messagingSenderId: "241244760650",
+            appId: "1:241244760650:web:d576bad57b3d07f66454b3",
+            measurementId: "G-4723RZ1TB6"
+        };
 
-            document.getElementById("userCount").textContent = userCount;
-            document.getElementById("registeredUsers").textContent = registeredUsers;
-            document.getElementById("usersToday").textContent = usersToday;
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-            const userList = document.getElementById("userList");
-            users.forEach(user => {
-                const row = document.createElement("tr");
-                row.innerHTML = `<td>${user.name}</td><td>${user.phone}</td><td>${user.email}</td><td>${user.location}</td>`;
-                userList.appendChild(row);
+        async function fetchRegisteredPeople() {
+            const querySnapshot = await getDocs(collection(db, "eventRegistrations"));
+            const registeredPeople = [];
+
+            querySnapshot.forEach((doc) => {
+                registeredPeople.push({ id: doc.id, ...doc.data() });
             });
+
+            return registeredPeople;
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const userList = document.getElementById("userList");
+            const registeredPeople = await fetchRegisteredPeople();
+            const registeredUsers = document.getElementById("registeredUsers");
+            registeredUsers.textContent = registeredPeople.length;
+
+            registeredPeople.forEach((person) => {
+                const tableRow = document.createElement("tr");
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = person.name;
+
+                const institutionCell = document.createElement("td");
+                institutionCell.textContent = person.institution;
+
+                const phoneCell = document.createElement("td");
+                phoneCell.textContent = person.contact;
+
+                const parentPhoneCell = document.createElement("td");
+                parentPhoneCell.textContent = person.parentContact;
+
+                const emailCell = document.createElement("td");
+                emailCell.textContent = person.email;
+
+                const ageCell = document.createElement("td");
+                ageCell.textContent = person.age;
+
+                // const paymentStatusCell = document.createElement("td");
+                // paymentStatusCell.textContent = person.paymentStatus;
+
+                // const paymentIdCell = document.createElement("td");
+                // paymentIdCell.textContent = person.paymentId || "N/A";
+
+                tableRow.appendChild(nameCell);
+                tableRow.appendChild(institutionCell);
+                tableRow.appendChild(phoneCell);
+                tableRow.appendChild(parentPhoneCell);
+                tableRow.appendChild(emailCell);
+                tableRow.appendChild(ageCell);
+                // tableRow.appendChild(paymentStatusCell);
+                // tableRow.appendChild(paymentIdCell);
+
+                userList.appendChild(tableRow);
+            });
         });
 
         let header = document.getElementById("header")
@@ -288,6 +345,6 @@ cross.addEventListener("click", () => {
         nav.classList.remove("show")
     }
 })
-    </script>
+</script>
 </body>
 </html>

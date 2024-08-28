@@ -141,7 +141,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 1px;
+    column-gap: 15px;
     list-style-type: none;
     text-transform: uppercase;
 

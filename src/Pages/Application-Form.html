@@ -80,6 +80,7 @@ input, select {
         transform: scale(1);
     }
 }
+
 button {
     font-size: 16px;
     background-color: #ed5710;
@@ -105,7 +106,21 @@ button:hover {
     padding-left: 70%;
     padding-top: 10px;
 }
-
+label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        #accommodation {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .response {
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -118,7 +133,7 @@ button:hover {
             <ul>
                 <li><a id="active" href="../../index.html">Home</a></li>
                 <li><a href="../Pages/Committee&Agenda.html">Committees and Agendas</a></li>
-                <li>
+                <!-- <li>
                     <a href="#">Our Organisation <i class='fas fa-angle-down'></i></a>
                     <ul id="Our_Organisation">
                         <li><a href="#">Secretariat</a></li>
@@ -127,7 +142,7 @@ button:hover {
                     </ul>
                 </li>
                 <li><a href="#">Collaborations and Sponsors</a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="#">Events</a></li> -->
                 <li>
                     <a href="#">About Us <i class='fas fa-angle-down'></i></a>
                     <ul id="about">
@@ -136,7 +151,7 @@ button:hover {
                         <li><a href="#">Meet the Secretariat</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Schedule</a></li>
+                <!-- <li><a href="#">Schedule</a></li> -->
                 <li><a href="../Pages/Contact Us.html">Contact Us</a></li>
                 <li>
                     <a href="../Pages/Registration.html"><button id="Register_button">Register Now</button></a>
@@ -149,23 +164,50 @@ button:hover {
     <!-- Header End-->
     
     <!-- Begin HTML form -->
-     <div class="application">
-    <form action="reg.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="fullname" placeholder="Full Name:" required> 
+    <div class="application">
+        <form id="registrationForm" method="post" >
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+            <label for="name">Participant's Name:</label>
+            <input type="text" id="name" name="fullname" placeholder="Full Name:" required> 
+            
+            <label for="institution">Institution Name:</label>
+            <input type="text" id="institution" name="institution" placeholder="Institution Name" required>
+            
+            <label for="contact">Phone No.:</label>
+            <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required>
 
-        <label for="contact">Contact Number:</label>
-        <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required>
+            <label for="parentContact">Parent's Phone No.:</label>
+            <input type="tel" id="parentContact" name="parentContact" placeholder="123-456-7890" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Age" required>
+            
+            <label for="email">Mail Id:</label>
+            <input type="email" id="email" name="email" placeholder="@gmail.com" required>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" placeholder="Enter your Address" required>
+            <label for="committee1">Committee Preference-1:</label>
+            <input type="text" id="committee1" name="committee1" placeholder="Committee Preference-1" required>
+        
+            <label for="committee2">Committee Preference-2:</label>
+            <input type="text" id="committee2" name="committee2" placeholder="Committee Preference-2" required>
+        
+            <label for="portfolio1">Portfolio Preference-1:</label>
+            <input type="text" id="portfolio1" name="portfolio1" placeholder="Portfolio Preference-1" required>
+        
+            <label for="portfolio2">Portfolio Preference-2:</label>
+            <input type="text" id="portfolio2" name="portfolio2" placeholder="Portfolio Preference-2" required>
+        
+            <label for="experience">Prior Mun Experience:</label>
+            <input type="text" id="experience" name="experience" placeholder="Prior Mun Experience" required>
+        
+            <label for="accommodation">Accommodation (If Needed): </label>
+    <input type="checkbox" id="accommodation" name="accommodation" onclick="updateResponse()">
+    <span class="response" id="responseText">No</span>
 
-        <button type="submit" name="submit">Apply</button>
-    </form>
-</div>
+    <!-- <button id="rzp-button1" ><i class="fas fa-money-bill"></i>Apply</button> -->
+    <button type="submit"><i class="fas fa-money-bill" ></i>Apply</button>
+        </form>
+    </div>
     <!-- End HTML form -->
 
     <!-- Footer Begin -->
@@ -194,6 +236,154 @@ button:hover {
         </div>
     </footer>
     <!-- Footer End -->
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+                apiKey: "AIzaSyD2uPHIXx_hwpF3zXR2eNu7jqczvvu8MQY",
+                authDomain: "theindiansummit-98ffa.firebaseapp.com",
+                projectId: "theindiansummit-98ffa",
+                storageBucket: "theindiansummit-98ffa.appspot.com",
+                messagingSenderId: "241244760650",
+                appId: "1:241244760650:web:d576bad57b3d07f66454b3",
+                measurementId: "G-4723RZ1TB6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function registerUser(userData) {
+    try {
+        const docRef = await addDoc(collection(db, "eventRegistrations"), {
+            name: userData.name,
+            institution: userData.institution,
+            contact: userData.contact,
+            parentContact: userData.parentContact,
+            age: userData.age,
+            email: userData.email,
+            committee1: userData.committee1,
+            committee2: userData.committee2,
+            portfolio1: userData.portfolio1,
+            portfolio2: userData.portfolio2,
+            experience: userData.experience,
+            accommodation: userData.accommodation,
+            // eventDate: userData.eventDate,
+            // paymentStatus: userData.paymentStatus,
+            // paymentId: userData.paymentId,  // Assuming you get this after successful payment
+            // timestamp: new Date()
+        });
+        console.log("User registered with ID: ", docRef.id);
+        } catch (e) {
+        console.error("Error adding document: ", e);
+        }
+    }
+
+        const registrationForm = document.getElementById("registrationForm");
+
+        registrationForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const userData = {
+                name: document.getElementById("name").value,
+                institution: document.getElementById("institution").value,
+                contact: document.getElementById("contact").value,
+                parentContact: document.getElementById("parentContact").value,
+                age: document.getElementById("age").value,
+                email: document.getElementById("email").value,
+                committee1: document.getElementById("committee1").value,
+                committee2: document.getElementById("committee2").value,
+                portfolio1: document.getElementById("portfolio1").value,
+                portfolio2: document.getElementById("portfolio2").value,
+                experience: document.getElementById("experience").value,
+                accommodation: document.getElementById("accommodation").checked,
+                // eventDate: new Date().toISOString(),  // Example event date, you can change it as needed
+                // paymentStatus: "pending",  // Update this after successful payment
+                // paymentId: null  // Update this after successful payment
+            };
+
+            console.log("User data: ", userData);
+            await registerUser(userData);
+            clearForm();
+            // Further actions like redirecting to a thank you page
+        });
+
+        var options = {
+    "key": "rzp_test_nqySQlccmJm9LH", // Enter the Key ID generated from the Dashboard
+    "amount": "1000",
+    "currency": "INR",
+    "description": "The Indian Summit",
+    "image": "../images/Homepage/Logo.png",
+    "prefill":
+    {
+      "email": "info@theindiansummit.com",
+      "contact": +917665999929,
+    },
+    config: {
+      display: {
+        blocks: {
+          utib: { //name for Axis block
+            name: "Pay using Axis Bank",
+            instruments: [
+              {
+                method: "card",
+                issuers: ["UTIB"]
+              },
+              {
+                method: "netbanking",
+                banks: ["UTIB"]
+              },
+            ]
+          },
+          other: { //  name for other block
+            name: "Other Payment modes",
+            instruments: [
+              {
+                method: "upi",
+                issuers: ["ICIC"]
+              },
+              {
+                method: 'netbanking',
+              }
+            ]
+          }
+        },
+        hide: [
+          {
+          method: "upi"
+          }
+        ],
+        sequence: ["block.utib", "block.other"],
+        preferences: {
+          show_default_blocks: false // Should Checkout show its default blocks?
+        }
+      }
+    },
+    "handler": function (response) {
+      alert(response.razorpay_payment_id);
+    },
+    "modal": {
+      "ondismiss": function () {
+        if (confirm("Are you sure, you want to close the form?")) {
+          txt = "You pressed OK!";
+          console.log("Checkout form closed by the user");
+        } else {
+          txt = "You pressed Cancel!";
+          console.log("Complete the Payment")
+        }
+      }
+    }
+  };
+  var rzp1 = new Razorpay(options);
+  document.getElementById('rzp-button1').onclick = function (e) {
+    rzp1.open();
+    e.preventDefault();
+  }
+    </script>
+
     <script>
         let header = document.getElementById("header")
 let nav = document.getElementById("nav");
@@ -219,6 +409,19 @@ cross.addEventListener("click", () => {
         nav.classList.remove("show")
     }
 })
+function updateResponse() {
+            const checkbox = document.getElementById("accommodation");
+            const responseText = document.getElementById("responseText");
+            responseText.style.display = "inline"; // Show the response
+            responseText.textContent = checkbox.checked ? "Yes" : "No";
+        }
+
+        
+    function clearForm() {
+    document.getElementById('registrationForm').reset(); // Reset the form
+    document.getElementById('responseText').innerText = 'No'; // Reset the response text
+}
     </script>
+    
 </body>
 </html>
