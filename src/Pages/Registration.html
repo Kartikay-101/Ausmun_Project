@@ -112,11 +112,31 @@ input, select {
     padding-left: 70%;
     padding-top: 10px;
 }
+.accommodation-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.terms-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+#termsLink{
+    color: blue;
+    cursor: pointer;
+}
+#termsLink:hover{
+    text-decoration: underline;
+
+}
 label {
             font-weight: bold;
             margin-right: 10px;
         }
         #accommodation {
+            display: inline;
             margin-right: 10px;
             width: 20px;
             height: 20px;
@@ -139,17 +159,16 @@ label {
             flex: 1;
             padding-left: 20px;
         }
-
+    
         /* Modal styles */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    width: 100vw;
+    height: 100vh;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
@@ -159,13 +178,16 @@ label {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    height: 90%;
 }
 
 .close {
+    position: absolute;
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    right: 10px;
+    top: 0;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -292,13 +314,17 @@ label {
             <label for="experience">Prior Mun Experience:</label>
             <input type="text" id="experience" name="experience" placeholder="Prior Mun Experience" required>
         
+            <div class="accommodation-container">
             <label for="accommodation">Accommodation (If Needed): </label>
             <input type="checkbox" id="accommodation" name="accommodation" onclick="updateResponse()">
             <span class="response" id="responseText">No</span>
+            </div>
 
             <!-- Terms and Conditions Checkbox -->
-            <label for="terms">I agree to the <a href="#" id="termsLink">terms and conditions</a></label>
-            <input type="checkbox" id="terms" name="terms" required>
+            <div class="terms-container">
+            <input type="checkbox" id="terms" name="terms" style="display: inline; width: auto;" required>
+            <span >I agree to the <a href="#" id="termsLink"  >terms and conditions</a></span>
+            </div>
 
             <!-- <button id="rzp-button1" ><i class="fas fa-money-bill"></i>Apply</button> -->
             <button type="submit" class="applybtn">Apply</button>
@@ -309,19 +335,19 @@ label {
             
             <div id="termsModal" class="modal">
             <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>The Indian Summit</h2>
-        <h3>Terms and Conditions</h3>
-        <p><strong>1. Registration Deadlines</strong></p>
-        <p>• All registrations are accepted on a first come, first served basis. Once the maximum capacity of a committee is reached, then the subsequent applicants move to their next preferred committee.</p>
-        <p><strong>2. Refund Policy</strong></p>
-        <p>• If the retreat or event is cancelled by the organizer, you will receive a full refund (100%)</p>
-        <p>• If you cancel your participation in a retreat or event for any reason, you receive no refunds. We cannot however compensate you for airfare or travel costs incurred. In the unlikely event that the retreat or event is cancelled due to weather, natural disaster or political upheaval, we cannot guarantee a refund.</p>
-        <p><strong>3. Privacy and Intellectual Property</strong></p>
-        <p>• The Indian Summit reserves the right to utilize all the data submitted to The Indian Summit and to collect data in the form of photographs or videos during the conference and social events without limitations.</p>
-        <p>• All participants agree that no data, results, and materials from The Indian Summit 2024 will be disseminated by means of publications, reports, conferences, or any other form without permission from The Indian Summit of which these data, results, and materials are its exclusive property.</p>
-        <p>• The Indian Summit reserves the right to change these terms and conditions at any time without prior notice. If any changes are made, the revised terms and conditions shall be posted on the The Indian Summit website immediately.</p>
-        <p>Please check the latest information posted herein to inform yourself of any changes.</p>
+                <span class="close">&times;</span>
+                <h2 style="font-weight: bold; font-size: 30px;">The Indian Summit</h2>
+                <h3 style="font-weight: 600; font-size: 20px; margin-top: 15px;">Terms and Conditions</h3>
+                <p style="margin-top: 10px;"><strong>1. Registration Deadlines</strong></p>
+                <p>• All registrations are accepted on a first come, first served basis. Once the maximum capacity of a committee is reached, then the subsequent applicants move to their next preferred committee.</p>
+                <p style="margin-top: 10px;"><strong>2. Refund Policy</strong></p>
+                <p>• If the retreat or event is cancelled by the organizer, you will receive a full refund (100%)</p>
+                <p>• If you cancel your participation in a retreat or event for any reason, you receive no refunds. We cannot however compensate you for airfare or travel costs incurred. In the unlikely event that the retreat or event is cancelled due to weather, natural disaster or political upheaval, we cannot guarantee a refund.</p>
+                <p style="margin-top: 10px;"><strong>3. Privacy and Intellectual Property</strong></p>
+                <p>• The Indian Summit reserves the right to utilize all the data submitted to The Indian Summit and to collect data in the form of photographs or videos during the conference and social events without limitations.</p>
+                <p>• All participants agree that no data, results, and materials from The Indian Summit 2024 will be disseminated by means of publications, reports, conferences, or any other form without permission from The Indian Summit of which these data, results, and materials are its exclusive property.</p>
+                <p>• The Indian Summit reserves the right to change these terms and conditions at any time without prior notice. If any changes are made, the revised terms and conditions shall be posted on the The Indian Summit website immediately.</p>
+                <p>Please check the latest information posted herein to inform yourself of any changes.</p>
             </div>
             </div>
     <!-- End HTML form -->
