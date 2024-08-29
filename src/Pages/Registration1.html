@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Welcome to The Indian Summit
+    </title>
+    <!-- Insert site logo -->
+    <link rel="shortcut icon" href="../images/Homepage/Logo.png" type="image/x-icon">
+    <!-- Insert site stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Insert Countdown Link -->
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <!-- Insert Whatsapp link-->
+    <script src="https://kit.fontawesome.com/dbd1480747.js" crossorigin="anonymous"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Specific style for Theme.html */
+      #header {
+          background-color: #2f12124d;
+      }
+      
+  </style>
+</head>
+
+  <body >
+
+
+      <div
+          class="view flex-grow xl:py-14 xl:px-28  text-xs sm:text-left relative md:px-10 lg:px-20"
+          
+        >
+          <p class="text-2xl font-bold py-7 md:text-3xl lg:text-xl xl:text-4xl">
+            Conference Details:
+          </p>
+          <p class="text-xl font-bold py-7 md:text-2xl lg:text-lg xl:text-3xl">
+            Dates: <span class="font-normal">14, 15, 16 August 2024</span>
+          </p>
+          <p class="text-xl font-bold py-3 md:text-2xl lg:text-lg xl:text-3xl">
+            Venue: <span class="font-normal">Jaipur, Rajasthan</span>
+          </p>
+          <p class="mt-14 text-2xl font-bold md:text-2xl lg:text-lg xl:text-4xl">
+            Registration Fees:
+          </p>
+          <p class="text-xl font-bold mt-8 md:text-2xl lg:text-lg xl:text-3xl">
+            Delegate Fee:
+            <span class="font-normal">INR 4000/-* (excluding accommodation)</span>
+          </p>
+          <p class="text-xl font-bold mt-9 md:text-2xl lg:text-lg xl:text-3xl">
+            Accommodation Fee: <span class="font-normal">INR 3500/-**</span>
+          </p>
+          <p class="mt-5 px-3 md:px-5 lg:px-10">
+            *Last day to avail accommodation is 30 July
+          </p>
+          <h1
+            class="text-2xl font-bold mt-1 px-3 md:text-xl lg:text-lg xl:text-3xl"
+          >
+            Institution Registration Fee:
+            <span class="font-normal"
+              >INR 3000/- (for nomination for Best Institute Award)</span
+            >
+          </h1>
+          <h2 class="mt-8 px-3 md:text-lg lg:text-base xl:text-2xl">
+            *The delegate fee is subject to an increase after July 10, 2024
+          </h2>
+          <h3 class="mt-4 px-3 md:text-base lg:text-sm xl:text-xl">
+            **Accommodation fee is on an individual basis for twin-sharing rooms.
+            Delegates will receive 3 days of accommodation.
+          </h3>
+          <h4 class="mt-5 px-3 md:text-sm lg:text-xs xl:text-lg">
+            ***Individuals seeking accommodation are requested to confirm their
+            reservation by the 30th of July. Given the extended weekend, hotel
+            prices and availability may vary.
+          </h4>
+      </div>
+
+    
+    
+
+
+    <script>
+      let header = document.getElementById("header")
+      let nav = document.getElementById("nav");
+      let ham = document.getElementById("hamburger");
+      let cross = document.getElementById("cross");
+  
+      ham.addEventListener("click",()=>{
+          ham.style.display = "none"
+          cross.style.display = "block"
+          header.style.backgroundColor = "black"
+          if(nav.classList != "show"){
+              nav.style.zIndex = "9999"
+              nav.classList.add("show")
+          }
+  
+      })
+  
+      cross.addEventListener("click",()=>{
+          ham.style.display = "block"
+          cross.style.display = "none"
+          header.style.backgroundColor = "transparent"
+          if(nav.classList == "show"){
+              nav.classList.remove("show")
+          }
+      })
+  </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const viewElements = document.querySelectorAll(".view");
+
+        function handleScroll() {
+          viewElements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              element.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+      });
+    </script>
+  </body>
+</html>
