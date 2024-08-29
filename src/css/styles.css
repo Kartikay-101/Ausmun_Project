@@ -410,10 +410,10 @@ nav.show {
 .welcomeText {
   font-size: 3rem;
   font-weight: bold;
-  background: linear-gradient(45deg, #fe491e, #fff7d7); /* Gradient color */
+  background: linear-gradient(45deg, #fe491e, #cb7300); /* Gradient color */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; /* Text color from gradient */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Text shadow */
+  text-shadow: 10px 8px 30px rgba(0, 0, 0, 0.7); /* Text shadow */
   margin: 0;
 }
 
@@ -434,6 +434,10 @@ nav.show {
 .progress-ring {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progress-ring__circle {
@@ -451,7 +455,8 @@ nav.show {
 }
 
 .progress-text {
-  font-size: 1.5rem;
+  fill: #ffffff; /* Text color */
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -474,16 +479,19 @@ nav.show {
   .progress-container p {
     font-size: 0.8rem;
   }
+  .progress-container {
+    margin: 0;
+  }
 
   .welcomeText {
     font-size: 2rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   .progress-ring {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
   }
 
   .progress-ring__circle {
@@ -491,9 +499,12 @@ nav.show {
   }
 
   .progress-text {
-    font-size: 0.8rem;
+    font-size: 1.5rem;
   }
 
+  .progress-container {
+    margin: 1px;
+  }
   .progress-container p {
     font-size: 0.7rem;
   }
@@ -679,7 +690,6 @@ nav.show {
     height: 50px;
   }
   .indivi-heading {
-    font-size: 60px;
     color: #ffffff;
     font-weight: 600;
     text-align: center;
@@ -838,19 +848,6 @@ footer .container .item-2 :hover {
   footer .container .item-3 .promoting img {
     max-width: 100px;
   }
-  .indivi-heading {
-    font-size: 37px;
-    color: #ffffff;
-    font-weight: 600;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(252, 28, 28, 0.4),
-      0 0 20px rgba(252, 28, 28, 0.4), 0 0 30px rgba(252, 28, 28, 0.4);
-
-    margin: 40px 0;
-  }
-  .indivi-sub-heading {
-    font-size: 25px;
-  }
 }
 
 @media (max-width: 1020px) {
@@ -917,6 +914,23 @@ footer .container .item-2 :hover {
   /* Adjust the blur radius as needed */
   z-index: -1;
   /* Ensure the pseudo-element is behind the content */
+}
+
+.about_btn {
+  background-color: rgb(233, 86, 19);
+  padding: 8px 18px;
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.about_btn:hover {
+  background-color: rgba(236, 82, 11, 0.772);
 }
 
 .header-content {
@@ -1009,7 +1023,7 @@ body {
 /* MOBILE VIEW Begin */
 @media (max-width: 600px) {
   .center-image {
-    padding-top: 28%;
+    /* padding-top: 28%; */
   }
 
   .center-logo {
@@ -1060,8 +1074,8 @@ body {
 .committe-heading {
   margin-bottom: 40px;
   font-size: 2em;
+  font-weight: bold;
   color: #fff;
-  font-family: cinzel;
 }
 
 .grid-container1 {
