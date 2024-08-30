@@ -892,29 +892,7 @@ footer .container .item-2 :hover {
 /* Theme Begin  */
 @import url("https://fonts.googleapis.com/css2?family=Copperplate+Gothic+Light&display=swap");
 
-.header-background1 {
-  background-image: url("../images/Intro & Theme/image2.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: -1;
-}
 
-.header-background1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: inherit;
-  background-size: inherit;
-  background-position: inherit;
-  filter: blur(5px);
-  /* Adjust the blur radius as needed */
-  z-index: -1;
-  /* Ensure the pseudo-element is behind the content */
-}
 
 .about_btn {
   background-color: rgb(233, 86, 19);
@@ -935,7 +913,7 @@ footer .container .item-2 :hover {
 
 .header-content {
   position: relative;
-  z-index: 1;
+  
   /* Ensure the text is above the blurred background */
   color: black;
   /* Set the text color to black */
