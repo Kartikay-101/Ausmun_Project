@@ -19,39 +19,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* Specific style for Theme.html */
-        #header {
-            background-color: #2f12124d;
-        }
-        
+
+    body{
+        background-image: url("../images/Homepage/theme.jpg");
+        background-size: cover;
+        background-position: center;
+        /* background-attachment: fixed; */
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(3px);
+    /* Adjust the blur radius as needed */
+    z-index: -2;
+    /* Ensure the pseudo-element is behind the content */
+    }
+    
     </style>
 </head>
 <body class="bg-gray-100">
     
+    
+    
     <!-- Header Begin -->
     <header id="header">
         <div class="logo">
-            <a href="../../index.html"><img src="../images/Homepage/Logo.png" alt=""></a>
+            <a href="../../index.html"><img src="../images/Homepage/Logo.png" alt="logo"></a>
         </div>
         <nav id="nav">
             <ul>
                 <li><a id="active" href="../../index.html">Home</a></li>
                 <li>
                     <a href="../Pages/Committee&Agenda.html">Committees and Agendas
-                        <i class='fas fa-angle-down'></i>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">Our Organisation
                         <i class='fas fa-angle-down'></i>
                     </a>
                     <ul id="Our_Organisation">
                         <li><a href="#">Secretariat</a></li>
                         <li><a href="#">Memories</a></li>
-                        <li><a href="#">Mahila Sashaktikaran Avam Rastra Nirmarn</a></li>
+                        <li><a href="#">Mahila Sashaktikaran Avam Rastra Nirmarn</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Collabrations and Sponsors </a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="#">Events</a></li> -->
                 <li>
                     <a href="#">About Us
                         <i class='fas fa-angle-down'></i>
@@ -62,30 +84,27 @@
                         <li><a href="#">Meet the Secretariat</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Schedule</a></li>
+                <!-- <li><a href="#">Schedule</a></li> -->
                 <li><a href="../Pages/Contact Us.html">Contact Us</a></li>
-                <li>
-                    <a href="../Pages/Registration.html">
-                        <button id="Register_button">Register Now</button>
-                    </a>
-                </li>
     
             </ul>
         </nav>
+        <a href="../Pages/Registration.html">
+            <button id="Register_button">Register Now</button>
+        </a>
         <div id="hamburger">&#9776;</div>
         <div id="cross">&times;</div>
     </header>
     <!-- Header End-->
-    
     <header class="header-background1 h-96 flex items-center justify-center  text-white md:bg-cover ">
         <div class="text-center">
-            <h1 class="text-4xl font-bold fade-in" style="color: rgb(253, 93, 76);">About Us</h1>
+            <h1 class="text-4xl font-bold fade-in" style="color: rgb(255, 255, 255); font-family: 'Copperplate Gothic Light', sans-serif;">About Us</h1>
         </div>
     </header> 
     
-    <div class="bg-white py-10 px-4 md:px-10 ">
+    <div class="bg-white py-10 px-4 md:px-10 background-pattern">
 
-        <div class="max-w-3xl mx-auto  bg-white p-8    background-pattern bg-opacity-0 text-center md:bg-cover fade-in">
+        <div class="max-w-3xl mx-auto  bg-white p-8     bg-opacity-0 text-center md:bg-cover fade-in">
             <!--h2 class="text-3xl font-bold mb-6 text-center">Commonwealth Camaraderie</h2-->
 <!--para-->
             <div class="text-gray-700 space-y-6 text-center fade-in">
@@ -169,17 +188,13 @@
         }
     })
 </script>
+
 <script>
-window.addEventListener('scroll', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const fadeInElements = document.querySelectorAll('.fade-in');
   
     fadeInElements.forEach(element => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        element.classList.add('visible');
-      } else {
-        element.classList.remove('visible'); 
-      }
+      element.classList.add('visible');
     });
   });
 </script>

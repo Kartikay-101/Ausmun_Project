@@ -47,14 +47,14 @@
         <!-- Header Begin -->
         <header id="header">
             <div class="logo">
-                <a href="index.html"><img src="src/images/Homepage/Logo.png" alt=""></a>
+                <a href="index.html"><img src="src/images/Homepage/Logo.png" alt="logo"></a>
             </div>
             <nav id="nav">
                 <ul>
                     <li><a id="active" href="#">Home</a></li>
                     <li>
                         <a href="src/Pages/Committee&Agenda.html">Committees and Agendas
-                            <i class='fas fa-angle-down'></i>
+                            
                         </a>
                     </li>
                     <!-- <li>
@@ -81,18 +81,15 @@
                     </li>
                     <!-- <li><a href="#">Schedule</a></li> -->
                     <li><a href="src/Pages/Contact Us.html">Contact Us</a></li>
-                    <li>
-                        <a href="src/Pages/Registration.html">
-                            <button id="Register_button">Register Now</button>
-                        </a>
-                    </li>
 
                 </ul>
             </nav>
+            <a href="src/Pages/Registration.html">
+                <button id="Register_button">Register Now</button>
+            </a>
             <div id="hamburger">&#9776;</div>
             <div id="cross">&times;</div>
         </header>
-
         <!-- Header End-->
 
         <!-- Center Content -->
@@ -101,16 +98,47 @@
             <div class="center-image">
                 <img src="src/images/Homepage/Logo.png" class="center-logo">
             </div>
+
+            <h2 class="welcomeText">Welcome to The Indian Summit</h2>
         
             <!-- COUNTDOWN -->
             <div class="countdown">
-                <!-- <img src="src/images/Homepage/Kangaroo.png" class="kangaroo-image"> -->
-                <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles"
-                    data-timezone="Asia/Kolkata" data-textcolor="#ffffff" data-date="2024-11-11 12:00"
-                    data-background="#fe491e" data-digitscolor="#ffffff" data-unitscolor="#ffffff">Welcome to The Indian
-                    Summit</a>
-                <!-- <img src="src/images/Homepage/Elephant.png" class="elephant-image"> -->
+                <div class="progress-container">
+                    <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="progress-ring__circle progress-ring__background" stroke="#e6e6e6" cx="60" cy="60" r="50" />
+                        <circle id="days-ring" class="progress-ring__circle progress-ring__bar" cx="60" cy="60" r="50" />
+                        <text x="60" y="65" text-anchor="middle" transform="rotate(90, 60, 60)" class="progress-text" id="days">00</text>
+                    </svg>
+                    <p>Days</p>
+                </div>
+                <div class="progress-container">
+                    <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="progress-ring__circle progress-ring__background" stroke="#e6e6e6" cx="60" cy="60" r="50" />
+                        <circle id="hours-ring" class="progress-ring__circle progress-ring__bar" cx="60" cy="60" r="50" />
+                        <text x="60" y="65" text-anchor="middle" transform="rotate(90, 60, 60)" class="progress-text" id="hours">00</text>
+                    </svg>
+                    <p>Hours</p>
+                </div>
+                <div class="progress-container">
+                    <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="progress-ring__circle progress-ring__background" stroke="#e6e6e6" cx="60" cy="60" r="50" />
+                        <circle id="minutes-ring" class="progress-ring__circle progress-ring__bar" cx="60" cy="60" r="50" />
+                        <text x="60" y="65" text-anchor="middle" transform="rotate(90, 60, 60)" class="progress-text" id="minutes">00</text>
+                    </svg>
+                    <p>Minutes</p>
+                </div>
+                <div class="progress-container">
+                    <svg class="progress-ring" width="120" height="120" viewBox="0 0 120 120">
+                        <circle class="progress-ring__circle progress-ring__background" stroke="#e6e6e6" cx="60" cy="60" r="50" />
+                        <circle id="seconds-ring" class="progress-ring__circle progress-ring__bar" cx="60" cy="60" r="50" />
+                        <text x="60" y="65" text-anchor="middle" transform="rotate(90, 60, 60)" class="progress-text" id="seconds">00</text>
+                    </svg>
+                    <p>Seconds</p>
+                </div>
             </div>
+            
+            
+            
         </div>
 
 
@@ -176,7 +204,7 @@
 
                 <div class="text-center w-100 text-md-start"
                     style=" display: flex; justify-content: center; align-items: center;">
-                    <a href="src/Pages/Introduction.html"><button class="text-capitalize btn btn-primary px-5 py-2"
+                    <a href="src/Pages/Introduction.html"><button class="about_btn"
                             data-bs-toggle="tooltip" data-bs-title="Contact Now">About us
                         </button></a>
                 </div>
@@ -233,8 +261,7 @@
                                 "रहनुमाओं की अदाओं पे फ़िदा है दुनिया, इस बहकती हुई दुनिया को संभालो यारो! कैसे आकाश में सुराख़ नहीं हो सकता, एक पत्थर तो तबीयत से उछालो यारो!" This vibrant quote
                                 captures the spirit of what we are about to embark on. It is with
                                 immense joy and pride that I invite you to The Indian Summit,
-                                the largest conference ever held in North India, drawing together
-                                over 900 delegates.<br><br>
+                                the largest conference ever held in North India.<br><br>
                                 As the Founder Secretary-General of such an esteemed
                                 organization, The Indian Summit, I am deeply honored. The
                                 Indian Summit represents the culmination of a dream I began to
@@ -329,12 +356,54 @@
 
             const popup = document.getElementById("popup");
             const closePopup = document.getElementById("closePopup");
+// Set a fixed event date
+const eventDate = new Date('2024-11-09T06:30:00Z'); // Set your fixed event date and time here
 
-            // Function to open the popup
+function updateCountdown() {
+    const now = new Date();
+    const timeDiff = eventDate - now;
 
-            // function openPopup() {
-            //     popupOverlay.style.display = "block";
-            // }
+    if (timeDiff <= 0) {
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('days-ring').style.strokeDasharray = '0 314';
+        document.getElementById('hours-ring').style.strokeDasharray = '0 314';
+        document.getElementById('minutes-ring').style.strokeDasharray = '0 314';
+        document.getElementById('seconds-ring').style.strokeDasharray = '0 314';
+        return;
+    }
+
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+
+    updateProgress('days-ring', days / 100); // Assume 100 days for the progress bar
+    updateProgress('hours-ring', hours / 24); // 24 hours for the progress bar
+    updateProgress('minutes-ring', minutes / 60); // 60 minutes for the progress bar
+    updateProgress('seconds-ring', seconds / 60); // 60 seconds for the progress bar
+}
+
+function updateProgress(elementId, progress) {
+    const radius = 50;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference * (1 - progress);
+    document.getElementById(elementId).style.strokeDasharray = `${circumference} ${circumference}`;
+    document.getElementById(elementId).style.strokeDashoffset = offset;
+}
+
+// Update countdown every second
+const interval = setInterval(updateCountdown, 1000);
+
+// Initial call to display countdown immediately
+updateCountdown();
 
             // Function to close the popup
 
