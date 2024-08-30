@@ -387,6 +387,17 @@ nav.show {
     } */
 }
 
+.img-div{
+    width: 399px;
+    height: 399px;
+}
+.img-head{
+    width: 397px;
+    height: 397px;
+}
+.agenda{
+    font-size: 50px;
+}
 
 
 /* Header End*/
@@ -621,16 +632,17 @@ nav.show {
         height: 50px;
     }
     .indivi-heading {
-        font-size: 60px;
-        color: #FFFFFF;
-        font-weight: 600;
-        text-align: center;
-        text-shadow:
-            0 0 10px rgba(252, 28, 28, 0.4),
-            0 0 20px rgba(252, 28, 28, 0.4),
-            0 0 30px rgba(252, 28, 28, 0.4);
-
-        margin: 40px 0;
+        font-size: 40px;
+    }.img-div{
+        width: 199px;
+        height: 199px;
+    }
+    .img-head{
+        width: 197px;
+        height: 197px;
+    }
+    .agenda{
+        font-size: 30px;
     }
 }
 
