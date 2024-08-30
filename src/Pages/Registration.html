@@ -214,6 +214,47 @@ label {
     text-decoration: none;
     cursor: pointer;
 }
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2{
+        padding: 1px;
+    }
+    form {
+        max-width: 100%;
+        padding: 20px;
+    }
+    .applybtn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .center-container {
+        padding-left: 0;
+        text-align: center;
+    }
+    .container12 {
+        flex-direction: column;
+    }
+    .left-side, .right-side {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    .modal {
+        width: 90%;
+        height: 75vh;
+        
+    }
+    .view {
+                padding-left: 10px;
+            }
+    .modal::before {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    
+}
     </style>
 </head>
 <body>
