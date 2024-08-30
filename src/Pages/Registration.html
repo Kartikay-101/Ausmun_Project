@@ -15,11 +15,11 @@
     <style>
 body {
             font-family: Arial, sans-serif;
-            background: url(../images/Homepage/Untitled-design-12.jpg) no-repeat center;
+            background: url(../images/Homepage/Rajasthan1.png) no-repeat center;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            /* background-attachment: fixed; */
             position: relative;
         }
 .application {
@@ -166,7 +166,12 @@ label {
             flex: 1;
             padding-left: 20px;
         }
-    
+        .centered-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 /* Modal styles */
 .modal {
     display: none; /* Hidden by default */
@@ -305,12 +310,16 @@ label {
     
     <div class="container12">
         <div class="left-side">
-            <div class="view flex-grow xl:py-14 xl:px-28  text-xs sm:text-left relative md:px-10 lg:px-20" style="color: whitesmoke ;padding-left: 54px; background-color: #191b1b61; border-radius: 70px;">
-            <p class="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl">
-                Welcome on board in advance,
+            <div class="view flex-grow xl:py-14 xl:px-28  text-xs sm:text-left relative md:px-10 lg:px-20" style="color: whitesmoke ;padding-left: 54px; background-color: #191b1b61; border-radius: 70px; font-family: 'Copperplate Gothic Light', sans-serif;">
+            <p class="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl centered-text" s>
+                Welcome on board in advance
                 <br>    <br>
 
-                <span class="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-3xl">Your participation is highly valued. We have a stern belief that you are courageous enough to grab this amazing opportunity and you will make best of your efforts to win the competition. What are you waiting for? Register now!</span>
+                <div class="centered-text">
+                    <span class="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-3xl">
+                        Your participation is highly valued. We have a stern belief that you are courageous enough to grab this amazing opportunity and you will make best of your efforts to win the competition. What are you waiting for? Register now!
+                    </span>
+                </div>
             </p>
             <p class="text-xl font-bold py-7 md:text-2xl lg:text-lg xl:text-3xl">
             Dates: <span class="font-normal">9-10 November 2024</span>
@@ -326,8 +335,7 @@ label {
             <span class="font-normal">INR 2500/-* (excluding accommodation)</span>
             </p>
             <p class="text-xl font-bold mt-9 md:text-2xl lg:text-lg xl:text-3xl">
-            Accommodation Fee: <span class="font-normal">INR 5000 ₹
-                /-**</span>
+            <span class="font-normal">INR 5000 ₹ /-** (including accommodation)</span>
             </p>
             <!-- <p class="mt-5 px-3 md:px-5 lg:px-10">
             *Last day to avail accommodation is 30 July
@@ -348,7 +356,7 @@ label {
             <label for="contact">Phone No.:</label>
             <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required>
 
-            <label for="parentContact">Parent's Phone No.:</label>
+            <label for="parentContact">Optional Phone No.:</label>
             <input type="tel" id="parentContact" name="parentContact" placeholder="123-456-7890" required>
             
             <label for="age">Age:</label>
@@ -358,10 +366,30 @@ label {
             <input type="email" id="email" name="email" placeholder="@gmail.com" required>
 
             <label for="committee1">Committee Preference-1:</label>
-            <input type="text" id="committee1" name="committee1" placeholder="Committee Preference-1" required>
+            <select id="committee1" name="committee1" required>
+        <option value="" disabled selected>Select a committee</option>
+        <option value="Lok Sabha">Lok Sabha</option>
+        <option value="Parallel Universe">Parallel Universe</option>
+        <option value="General Assembly Legal">General Assembly Legal</option>
+        <option value="United Nations Security Council">United Nations Security Council</option>
+        <option value="United Nations Human Rights Council">United Nations Human Rights Council</option>
+        <option value="National Commission for Women / Continues Crisis Committee">National Commission for Women / Continues Crisis Committee</option>
+        <option value="Mahabharat / Historical Crisis Committee">Mahabharat / Historical Crisis Committee</option>
+        <option value="International Press">International Press</option>
+            </select>
         
-            <label for="committee2">Committee Preference-2:</label>
-            <input type="text" id="committee2" name="committee2" placeholder="Committee Preference-2" required>
+            <label for="committee1">Committee Preference-2:</label>
+            <select id="committee1" name="committee1" required>
+        <option value="" disabled selected>Select a committee</option>
+        <option value="Lok Sabha">Lok Sabha</option>
+        <option value="Parallel Universe">Parallel Universe</option>
+        <option value="General Assembly Legal">General Assembly Legal</option>
+        <option value="United Nations Security Council">United Nations Security Council</option>
+        <option value="United Nations Human Rights Council">United Nations Human Rights Council</option>
+        <option value="National Commission for Women / Continues Crisis Committee">National Commission for Women / Continues Crisis Committee</option>
+        <option value="Mahabharat / Historical Crisis Committee">Mahabharat / Historical Crisis Committee</option>
+        <option value="International Press">International Press</option>
+            </select>
         
             <label for="portfolio1">Portfolio Preference-1:</label>
             <input type="text" id="portfolio1" name="portfolio1" placeholder="Portfolio Preference-1" required>
@@ -369,7 +397,7 @@ label {
             <label for="portfolio2">Portfolio Preference-2:</label>
             <input type="text" id="portfolio2" name="portfolio2" placeholder="Portfolio Preference-2" required>
         
-            <label for="experience">Prior Mun Experience:</label>
+            <label for="experience">Prior MUN Experience:</label>
             <input type="text" id="experience" name="experience" placeholder="Prior Mun Experience" required>
         
             <div class="accommodation-container">

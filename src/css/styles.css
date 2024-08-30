@@ -1128,3 +1128,13 @@ a {
 }
 
 /* Committee Page End */
+.indivi-heading{
+  font-size: 70px;
+  font-family: 'Cinzel', serif;
+}
+.indivi-sub-heading{
+  font-family: 'Lora', serif;
+}
+.indivi-sub-heading-agenda{
+  font-family: 'Copperplate Gothic Light', sans-serif;
+}
