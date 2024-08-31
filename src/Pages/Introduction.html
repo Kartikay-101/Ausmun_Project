@@ -18,37 +18,76 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Specific style for Theme.html */
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body{
-        background-image: url("../images/Homepage/theme.jpg");
-        background-size: cover;
-        background-position: center;
-        /* background-attachment: fixed; */
-        background-repeat: no-repeat;
-        z-index: -1;
-    }
-    body::before {
-    content: "";
+body{
+    background-image: url('../images/Intro & Theme/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    filter: blur(3px);
-    /* Adjust the blur radius as needed */
-    z-index: -2;
-    /* Ensure the pseudo-element is behind the content */
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+    z-index: -1;
+}
+.Introduction{
+    width: 95vw;
+    margin: 0 auto;
+    padding: 30px 0;
+    height: auto;
+}
+.heading{
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+.gradient-text {
+    background: linear-gradient(to right, #fc2727, white);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+p{
+    color: white;
+    padding: 0 50px;
+    text-align: justify;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 20px;
+}
+.contact-link {
+    text-decoration: underline; /* Adds underline to the links */
+}
+@media screen and (max-width:550px) {
+    h1{
+        font-size: 20px;
     }
-    
+    p{
+        padding: 0 20px;
+        padding-bottom: 20px;
+    }
+    .gradient-text{
+        font-size: 37px;
+    }
+    .Introduction{
+        padding: 35px 0;
+    }
+}
     </style>
 </head>
-<body class="bg-gray-100">
-    
-    
+<body>
     
     <!-- Header Begin -->
     <header id="header">
@@ -96,42 +135,54 @@
         <div id="cross">&times;</div>
     </header>
     <!-- Header End-->
-    <header class="header-background1 h-96 flex items-center justify-center  text-white md:bg-cover ">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold fade-in" style="color: rgb(255, 255, 255); font-family: 'Copperplate Gothic Light', sans-serif;">About Us</h1>
-        </div>
-    </header> 
+    <div class="Introduction">
+    <h1 class="heading">Introduction <br> To <br><span class="gradient-text">The Indian Summit</span></h1>
+      <p>
+        THE INDIAN SUMMIT is not just a conference designed to bring together
+        delegates from around the country to engage in debates on ongoing and
+        emerging issues, this conference uniquely aims to celebrate and revive
+        INDIAN CULTURE in an era where globalization, epitomized by the
+        "McDonaldization" phenomenon, has led to the diminishing of our rich
+        cultural heritage.
+      </p>
+      <p>
+        Latterly, there's an urgent need to reconnect with our roots and promote
+        our cultural. The Indian Summit addresses this need by fostering a
+        platform where the essence of Indian culture is at the forefront. The
+        theme for this year, "THE CULTURE SAYS EVERYTHING?", encapsulates our
+        vision to enrich and promote cultural awareness through various engaging
+        activities.
+      </p>
+      <p>
+        With a mission in confluence with the GREEN INITIATIVE, the Indian Summit
+        shall be a completely ZERO PLASTIC event, promoting green initiatives and
+        showcasing eco-friendly practices. Our dedication to the environment
+        underscores our belief that cultural preservation and environmental
+        stewardship go hand in hand.
+      </p>
+      <p>
+        The summit will feature a diverse range of activities designed to inspire
+        confidence in emerging minds and encourage public speaking ranging from
+        the evergreen heated debates to lightening activities. This initiative not
+        only aims to contribute to nation-building through cultural preservation
+        and enhancement but also ensuring that emerging carries forward the legacy
+        of Indian culture with renewed vigor.
+      </p>
+      <p>
+        Join us at the Indian Summit, where we celebrate the past, present, and
+        future of Indian culture and prove that “YES, THE CULTURE SAYS
+        EVERYTHING”…
+      </p>
     
-    <div class="bg-white py-10 px-4 md:px-10 background-pattern">
-
-        <div class="max-w-3xl mx-auto  bg-white p-8     bg-opacity-0 text-center md:bg-cover fade-in">
-            <!--h2 class="text-3xl font-bold mb-6 text-center">Commonwealth Camaraderie</h2-->
-<!--para-->
-            <div class="text-gray-700 space-y-6 text-center fade-in">
-
-                <p>THE INDIAN SUMMIT is not just a conference designed to bring together delegates from 
-                    around the country to engage in debates on ongoing and emerging issues, this conference uniquely aims 
-                    to celebrate and revive INDIAN CULTURE in an era where globalization, epitomized by the 
-                    "McDonaldization" phenomenon, has led to the diminishing of our rich cultural heritage.  </p>
-                <p>Latterly, there's an urgent need to reconnect with our roots and promote our cultural. The Indian Summit 
-                    addresses this need by fostering a platform where the essence of Indian culture is at the forefront. The 
-                    theme for this year, "THE CULTURE SAYS EVERYTHING?", encapsulates our vision to enrich and 
-                    promote cultural awareness through various engaging activities.</p>
-                <p>With a mission in confluence with the GREEN INITIATIVE, the Indian Summit shall be a completely 
-                    ZERO PLASTIC event, promoting green initiatives and showcasing eco-friendly practices. Our 
-                    dedication to the environment underscores our belief that cultural preservation and environmental 
-                    stewardship go hand in hand.  </p>
-                <p>The summit will feature a diverse range of activities designed to inspire confidence in emerging minds 
-                    and encourage public speaking ranging from the evergreen heated debates to lightening activities. This 
-                    initiative not only aims to contribute to nation-building through cultural preservation and enhancement 
-                    but also ensuring that emerging carries forward the legacy of Indian culture with renewed vigor. </p>
-                <p>Join us at the Indian Summit, where we celebrate the past, present, and future of Indian culture and 
-                    prove that “YES, THE CULTURE SAYS EVERYTHING”…</p>
-            </div>
-        </div>
-</div>
-<!-- Footar Begin -->
-<footer>
+    
+    <p>Contact us <br>
+        <a href="tel:+917665999929" class="contact-link">Phone: +917665999929</a>
+        <br>
+        <a href="mailto:info@theindiansummit.com" class="contact-link">Email: info@theindiansummit.com</a>
+    </p>
+    </div>
+    <!-- Footar Begin -->
+    <footer>
     <div class="container">
         <div class="item-1">
             <h1 class="heading" style="color: rgb(255, 255, 255);">Contact us</h1>
@@ -160,8 +211,8 @@
                 <a href="../Pages/Registration.html">Register</a>
         </div>
     </div>
-</footer>
-<!-- Footer End -->
+    </footer>
+    <!-- Footer End -->
 <script>
     let header = document.getElementById("header")
     let nav = document.getElementById("nav");
@@ -198,3 +249,5 @@
     });
   });
 </script>
+</body>
+</html>
