@@ -892,8 +892,6 @@ footer .container .item-2 :hover {
 /* Theme Begin  */
 @import url("https://fonts.googleapis.com/css2?family=Copperplate+Gothic+Light&display=swap");
 
-
-
 .about_btn {
   background-color: rgb(233, 86, 19);
   padding: 8px 18px;
@@ -913,7 +911,7 @@ footer .container .item-2 :hover {
 
 .header-content {
   position: relative;
-  
+
   /* Ensure the text is above the blurred background */
   color: black;
   /* Set the text color to black */
