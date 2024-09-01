@@ -258,17 +258,17 @@
           width: 90%;
           height: 75vh;
         }
-        .view {
-          padding-left: 10px;
-        }
+        
         .modal::before {
           position: fixed;
           background-color: rgba(255, 255, 255, 0.5);
         }
+      .textplacement {
+        padding: 30px 30px;
       }
-      .text-center{
-        text-align: center;
-      }
+  
+    }
+    
     </style>
   </head>
   <body>
@@ -329,7 +329,7 @@
     <div class="container12">
       <div class="left-side">
         <div
-          class="view flex-grow xl:py-14 xl:px-28 text-xs sm:text-left relative md:px-10 lg:px-20"
+          class=" flex-grow xl:py-14 xl:px-28 text-xs sm:text-left relative md:px-10 lg:px-20 textplacement"
           style="
             color: whitesmoke;
             padding-left: 54px;
@@ -407,7 +407,7 @@
               required
             />
 
-            <label for="parentContact">Parent's Phone No.:</label>
+            <label for="parentContact">Optional Phone No.:</label>
             <input
               type="tel"
               id="parentContact"
@@ -435,22 +435,30 @@
             />
 
             <label for="committee1">Committee Preference-1:</label>
-            <input
-              type="text"
-              id="committee1"
-              name="committee1"
-              placeholder="Committee Preference-1"
-              required
-            />
+            <select id="committee1" name="committee1" style="color: #9ca3af;" required onchange="changeColor(this)">
+              <option value="" disabled selected>Select your committee</option>
+              <option value="Lok Sabha" style="color: black;">Lok Sabha</option>
+              <option value="Parallel Universe" style="color: black;">Parallel Universe</option>
+              <option value="General Assembly Legal" style="color: black;">General Assembly Legal</option>
+              <option value="United Nations Security Council" style="color: black;">United Nations Security Council</option>
+              <option value="United Nations Human Rights Council" style="color: black;">United Nations Human Rights Council</option>
+              <option value="National Commission for Women / Continues Crisis Committee" style="color: black;">National Commission for Women / Continues Crisis Committee</option>
+              <option value="Mahabharat / Historical Crisis Committee" style="color: black;">Mahabharat / Historical Crisis Committee</option>
+              <option value="International Press" style="color: black;">International Press</option>
+            </select>
 
-            <label for="committee2">Committee Preference-2:</label>
-            <input
-              type="text"
-              id="committee2"
-              name="committee2"
-              placeholder="Committee Preference-2"
-              required
-            />
+            <label for="committee1">Committee Preference-2:</label>
+            <select id="committee1" name="committee1" style="color: #9ca3af;" required onchange="changeColor(this)">
+              <option value="" disabled selected>Select your committee</option>
+              <option value="Lok Sabha" style="color: black;">Lok Sabha</option>
+              <option value="Parallel Universe" style="color: black;">Parallel Universe</option>
+              <option value="General Assembly Legal" style="color: black;">General Assembly Legal</option>
+              <option value="United Nations Security Council" style="color: black;">United Nations Security Council</option>
+              <option value="United Nations Human Rights Council" style="color: black;">United Nations Human Rights Council</option>
+              <option value="National Commission for Women / Continues Crisis Committee" style="color: black;">National Commission for Women / Continues Crisis Committee</option>
+              <option value="Mahabharat / Historical Crisis Committee" style="color: black;">Mahabharat / Historical Crisis Committee</option>
+              <option value="International Press" style="color: black;">International Press</option>
+            </select>
 
             <label for="portfolio1">Portfolio Preference-1:</label>
             <input
@@ -525,83 +533,76 @@
               Terms and Conditions
             </h3>
             <p style="margin-top: 10px"><strong>1. Introduction</strong></p>
-            • By registering on your portal, I agree to comply with and be bound
-            by the terms and conditions of The Indian Summit.
+            • By registering on your portal, I agree to comply with and be bound by the terms and conditions of The Indian Summit.
+
             <p style="margin-top: 10px"><strong>2. Privacy Policy</strong></p>
 
-            • By registering, I agree to the terms of your Privacy Policy.
+            <p>• Registration for the Indian Summit is conducted on a first-come, first-served basis. This means that spots are limited and allocated to participants in the order they register.</p>
+            <p>•	The Summit does not guarantee allocation to your first preferred committee. Once a committee reaches its maximum capacity, subsequent applicants will be moved to their next preferred committee. This ensures a fair and efficient registration process, giving everyone an equal opportunity.</p>
+            <p>•	Applicants are encouraged to register early to secure their preferred committee.</p>
+            <p>•	Please note that committee allocations are subject to availability and may change. Registering promptly increases your chances of getting your preferred committee.</p>
+            <p>•	Don't miss out on this opportunity – register now to secure your spot!</p>
+            <p>•	By registering early, you can ensure a spot in your preferred committee.</p>
+            
             <p style="margin-top: 10px">
               <strong>3. Use of the Portal</strong>
             </p>
-            <p>• I agree to use the portal for lawful purposes only.</p>
+            <p>• The Indian Summit issue one participation certificate per delegate, one time only.  TIS does not issue any certificates, more than once.
+            </p>
             <p>
-              • I may not engage in any activity that could harm or interfere
-              with the portal’s functionality.
+              • You hereby certify that all information submitted are truthful and accurate. Any falsification of any information submitted will terminate their participation in TIS and future TIS activities.
             </p>
             <p style="margin-top: 10px">
               <strong>4. Cancellation and Refund Policy </strong>
             </p>
-            • No Refund and Cancellation.
+            • By registering, I agree to the terms of your Privacy Policy.
+
             <p style="margin-top: 10px">
               <strong>5. Limitation of Liability</strong>
             </p>
             <p>
-              • The Indian Summit will not be liable for any damages resulting
-              from the use or inability to use the registration portal.
+              • I agree to use the portal for lawful purposes only.
+
             </p>
             <p>
-              • We do not guarantee the accuracy or completeness of the
-              information on the portal.
+              • I may not engage in any activity that could harm or interfere with the portal’s functionality.
+
             </p>
             <p style="margin-top: 10px">
               <strong>6. Changes to Terms and Conditions </strong>
             </p>
-            • We reserve the right to update these terms and conditions at any
-            time. Any changes will be posted on this page, and your continued
-            use of the portal constitutes acceptance of the updated terms.
+            <p>• No Refund and Cancellation.</p>
+            <p>•	If the retreat or event is cancelled by the organizer, you will receive a full refund (100%)</p>
+            <p>•	If you cancel your participation in a retreat or event for any reason, you receive no refunds. We cannot however compensate you for airfare or travel costs incurred. In the unlikely event that the retreat or event is cancelled due to weather, natural disaster or political upheaval, we cannot guarantee a refund.</p>
+            
             <p style="margin-top: 10px">
               <strong>7. Governing Law</strong>
             </p>
-            • These terms and conditions are governed by the laws of India, and
-            any disputes will be resolved in accordance with these laws. I
-            hereby certify that all information submitted are truthful and
-            accurate And I agree to the terms & condition.
+            <p>• The Indian Summit reserves the right to utilize all the data submitted to The Indian Summit and to collect data in the form of photographs or videas during the conference and social events without limitations.</p>
+            <p>•	All participants agree that no data, results, and materials from The Indian Summit 2024 will be disseminated by means of publications, reports, conferences, or any other form without permission from The Indian Summit of which these data, results, and materials are its exclusive property.</p>
+            <p>•	The Indian Summit reserves the right to change these terms and conditions at any time without prior notice. If any changes are made, the revised terms and conditions shall be posted on the The Indian Summit website immediately.</p>
+            <p>•	Please check the latest information posted herein to inform yourself of any changes</p>
+            
             <p style="margin-top: 10px">
               <strong>8. Registration Deadlines</strong>
             </p>
             <p>
-              • All registrations are accepted on a first come, first served
-              basis. Once the maximum capacity of a committee is reached, then
-              the subsequent applicants move to their next preferred committee.
+              <p>• The Indian Summit will not be liable for any damages resulting from the use or inability to use the registration portal.</p>
+              <p>•	We do not guarantee the accuracy or completeness of the information on the portal.</p>
+              
             </p>
             <p style="margin-top: 10px"><strong>9. Refund Policy</strong></p>
-            <p>• No refund policy.</p>
+            <p>• We reserve the right to update these terms and conditions at any time. Any changes will be posted on this page, and your continued use of the portal constitutes acceptance of the updated terms.
+            </p>
             <p style="margin-top: 10px">
               <strong>10. Privacy and Intellectual Property</strong>
             </p>
             <p>
-              • The Indian Summit reserves the right to utilize all the data
-              submitted to The Indian Summit and to collect data in the form of
-              photographs or videos during the conference and social events
-              without limitations.
+              • These terms and conditions are governed by the laws of India, and any disputes will be resolved in accordance with these laws.
+
             </p>
-            <p>
-              • All participants agree that no data, results, and materials from
-              The Indian Summit 2024 will be disseminated by means of
-              publications, reports, conferences, or any other form without
-              permission from The Indian Summit of which these data, results,
-              and materials are its exclusive property.
-            </p>
-            <p>
-              • The Indian Summit reserves the right to change these terms and
-              conditions at any time without prior notice. If any changes are
-              made, the revised terms and conditions shall be posted on the The
-              Indian Summit website immediately.
-            </p>
-            <p>
-              Please check the latest information posted herein to inform
-              yourself of any changes.
-            </p>
+
+            <p style="text-align: center; padding: 10px 10px; font-weight: bold;">I hereby certify that all information submitted are truthful and accurate And I agree to the terms & condition.</p>
             <button class="close">Close</button>
           </div>
         </div>
@@ -909,5 +910,10 @@
         document.getElementById("applyButton").disabled = !this.checked;
       });
     </script>
+    <script>
+      function changeColor(selectElement) {
+          selectElement.style.color = 'black';
+      }
+  </script>
   </body>
 </html>

@@ -210,11 +210,11 @@
                 <!-- Group or Company Field -->
     <div class="w-full px-1 mb-4 relative z-10">
       <label class="text-gray-500 font-light">Group or Organization</label>
-      <select id="categorySelect" class="w-full mt-2 px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-green-500" onchange="toggleGroupDropdown()">
-          <option value="">Select an option</option>
-          <option value="student_delegate">Student / Delegate</option>
-          <option value="school_college">School / College</option>
-          <option value="other_organizations">Other Organizations</option>
+      <select id="categorySelect" class="w-full mt-2 px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-green-500" style="color: #9ca3af;" onchange="toggleGroupDropdown()">
+        <option value="">Select an option</option>
+          <option value="student_delegate" style="color: black;">Student / Delegate</option>
+          <option value="school_college" style="color: black;">School / College</option>
+          <option value="other_organizations" style="color: black;">Other Organizations</option>
       </select>
   </div>
   <div id="other-organization-input" class="hidden">
@@ -248,7 +248,9 @@
                 <div class="font-bold pt-12 pb-3 px-4 text-white text-2xl">Contact us</div>
                 <div class="flex items-center pt-12">
                   <img src="./../images/Contact Us/phone.png" alt="" class="mr-3 px-6 h-5">
-                  <span class="text-lg py-2">+91 7665999929</span>
+                  <span class="text-lg py-2" style="
+                  margin-left: -13px;
+              ">+91 7665999929</span>
                 </div>
                 <div class="flex items-center pt-4">
                   
@@ -313,5 +315,10 @@
             }
         })
     </script>
+    <script>
+      document.getElementById('categorySelect').addEventListener('change', function() {
+          this.style.color = 'black';
+      });
+  </script>
       </body>
 </html>
