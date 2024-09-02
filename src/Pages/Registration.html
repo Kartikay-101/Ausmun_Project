@@ -37,6 +37,7 @@
       form {
         background-color: white;
         font-size: 18px;
+        height: 100%;
         max-width: 500px;
         margin: 0 auto;
         padding: 20px;
@@ -74,12 +75,18 @@
 
       input,
       select {
-        width: 96%;
-        font-size: 15px;
-        padding: 12px;
+        width: 100%;
+        height: 40px;
+        font-size: 15px  ;
+        padding: 6px 12px  !important;
         margin-bottom: 10px;
-        border: 2px solid #ccc;
+        outline: 2px solid gray;
         border-radius: 11px;
+       
+      }
+
+      input:focus,select:focus{
+        outline: 2px solid #fe491e;
       }
       #internship {
         width: 100%;
@@ -133,8 +140,10 @@
         margin-bottom: 10px;
       }
       .terms-container {
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: start;
         margin-bottom: 10px;
         gap: 5px;
       }
@@ -314,7 +323,7 @@
               <li>
                 <a href="../Pages/Theme.html">Theme of The Indian Summit 24</a>
               </li>
-              <li><a href="../Pages/Profile.html">Meet the Secretariat</a></li>
+              <!-- <li><a href="../Pages/Profile.html">Meet the Secretariat</a></li> -->
             </ul>
           </li>
           <!-- <li><a href="#">Schedule</a></li> -->
@@ -490,6 +499,7 @@
             <div class="accommodation-container">
               <label for="accommodation">Accommodation (If Needed): </label>
               <input
+              style="outline: none;"
                 type="checkbox"
                 id="accommodation"
                 name="accommodation"
@@ -501,6 +511,7 @@
             <!-- Terms and Conditions Checkbox -->
             <div class="terms-container">
               <input
+              style="outline: none; width: 17px;"
                 type="checkbox"
                 id="terms"
                 name="terms"
@@ -572,7 +583,7 @@
               <strong>6. Cancellation and Refund Policy:</strong>
             </p>
             <p>• No Refund and Cancellation.</p>
-            <p>•	If the retreat or event is cancelled by the organizer, you will receive a full refund (100%)</p>
+            
             <p>•	If you cancel your participation in a retreat or event for any reason, you receive no refunds. We cannot however compensate you for airfare or travel costs incurred. In the unlikely event that the retreat or event is cancelled due to weather, natural disaster or political upheaval, we cannot guarantee a refund.</p>
             
             <p style="margin-top: 10px">
