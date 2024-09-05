@@ -195,11 +195,11 @@
     <div id="dashboard" class="dashboard-container">
       <div class="dashboard-header">
         <h1>Admin Dashboard</h1>
-        <a href="../Pages/Application-Form.html">
+        <!-- <a href="../Pages/Application-Form.html">
           <button class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">
             Application Form
           </button>
-        </a>
+        </a> -->
       </div>
 
       <!-- User Counts -->
@@ -225,11 +225,11 @@
           <thead>
             <tr>
               <th>Name</th>
+              <th>Age</th>
               <th>Institution Name</th>
               <th>Phone Number</th>
-              <th>Parent's Phone Number</th>
               <th>Email</th>
-              <th>Age</th>
+              <th>Transaction Id</th>
               <!-- <th>Committee Preference-1</th>
                         <th>Committee Preference-2</th>
                         <th>Portfolio Preference-1</th>
@@ -366,8 +366,8 @@
           const phoneCell = document.createElement("td");
           phoneCell.textContent = person.contact;
 
-          const parentPhoneCell = document.createElement("td");
-          parentPhoneCell.textContent = person.parentContact;
+          const transactionId = document.createElement("td");
+          transactionId.textContent = person.transactionId;
 
           const emailCell = document.createElement("td");
           emailCell.textContent = person.email;
@@ -384,7 +384,7 @@
           tableRow.appendChild(nameCell);
           tableRow.appendChild(institutionCell);
           tableRow.appendChild(phoneCell);
-          tableRow.appendChild(parentPhoneCell);
+          tableRow.appendChild(transactionId);
           tableRow.appendChild(emailCell);
           tableRow.appendChild(ageCell);
           // tableRow.appendChild(paymentStatusCell);
