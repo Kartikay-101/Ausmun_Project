@@ -899,12 +899,7 @@ footer .container .item-2 :hover {
   background-repeat: no-repeat;
   background-position: center;
 }
-.floral-mssg-bg{
-  background-image: url("../images/Homepage/founderbg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 .floral1-bg {
   background-image: url("../images/Intro & Theme/background1.jpg");
   background-size: cover;
