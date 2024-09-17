@@ -100,11 +100,12 @@
       }
       .table-container {
         display: block;
-          overflow-x: auto;
-          white-space: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
       }
 
-      .table-container th, .table-container td {
+      .table-container th,
+      .table-container td {
         padding: 8px;
         text-align: left;
         border: 2px solid #201b1b4a;
@@ -232,6 +233,22 @@
       <!-- User List -->
       <div class="user-list">
         <h2>Registered Users</h2>
+        <input
+          style="color: black; padding: 8px; border-radius: 7px"
+          type="text"
+          id="searchInput"
+          placeholder="Search..."
+        />
+        <button
+          style="
+            background-color: rgb(233, 86, 19);
+            padding: 8px;
+            border-radius: 10px;
+          "
+          id="searchButton"
+        >
+          Search
+        </button>
         <div class="table-container">
           <table>
             <thead>
@@ -363,13 +380,11 @@
         return registeredPeople;
       }
 
-      document.addEventListener("DOMContentLoaded", async () => {
+      function displayRegisteredPeople(people) {
         const userList = document.getElementById("userList");
-        const registeredPeople = await fetchRegisteredPeople();
-        const registeredUsers = document.getElementById("registeredUsers");
-        registeredUsers.textContent = registeredPeople.length;
+        userList.innerHTML = ""; // Clear existing entries
 
-        registeredPeople.forEach((person) => {
+        people.forEach((person) => {
           const tableRow = document.createElement("tr");
 
           const nameCell = document.createElement("td");
@@ -414,7 +429,6 @@
           const referByCell = document.createElement("td");
           referByCell.textContent = person.referBy;
 
-
           tableRow.appendChild(nameCell);
           tableRow.appendChild(institutionCell);
           tableRow.appendChild(phoneCell);
@@ -432,6 +446,34 @@
 
           userList.appendChild(tableRow);
         });
+      }
+
+      async function applySearch() {
+        const searchInput = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const registeredPeople = await fetchRegisteredPeople();
+
+        const filteredPeople = registeredPeople.filter((person) =>
+          Object.values(person).some((value) =>
+            String(value).toLowerCase().includes(searchInput)
+          )
+        );
+
+        filteredPeople.sort((a, b) => b.transactionId - a.transactionId);
+        displayRegisteredPeople(filteredPeople);
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const registeredPeople = await fetchRegisteredPeople();
+        const registeredUsers = document.getElementById("registeredUsers");
+        registeredUsers.textContent = registeredPeople.length;
+
+        displayRegisteredPeople(registeredPeople);
+
+        document
+          .getElementById("searchButton")
+          .addEventListener("click", applySearch);
       });
 
       let header = document.getElementById("header");

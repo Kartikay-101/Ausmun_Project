@@ -537,8 +537,8 @@
           <label for="transactionId">Transaction ID (Mandatory):</label>
           <input type="text" id="transactionId" name="transactionId" placeholder="Transaction Id" required />
             
-          <label for="paymentScreenshot">Screenshot of the payment:</label>
-          <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required />
+          <!-- <label for="paymentScreenshot">Screenshot of the payment:</label>
+          <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required /> -->
       
           <label for="referBy">Referred by:</label>
           <input type="text" id="referBy" name="referBy" placeholder="Referred by" required />
@@ -748,10 +748,7 @@
           accommodation: userData.accommodation,
           transactionId: userData.transactionId,
           referBy: userData.referBy,
-          // eventDate: userData.eventDate,
-          // paymentStatus: userData.paymentStatus,
-          // paymentId: userData.paymentId,  // Assuming you get this after successful payment
-          // timestamp: new Date()
+
         });
         console.log("User registered with ID: ", docRef.id);
         if(docRef.id){
@@ -785,6 +782,7 @@
         experience: document.getElementById("experience").value,
         accommodation: document.getElementById("accommodation").checked,
         transactionId: document.getElementById("transactionId").value,
+        referBy: document.getElementById("referBy").value,
         // eventDate: new Date().toISOString(),  // Example event date, you can change it as needed
         // paymentStatus: "pending",  // Update this after successful payment
         // paymentId: null  // Update this after successful payment
