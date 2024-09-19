@@ -51,6 +51,7 @@
       }
 
       .container {
+        width: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -151,6 +152,7 @@
       @media (max-width: 480px) {
         .content h1 {
           font-size: 32px;
+          padding-top: 161px;
         }
 
         .content p {
@@ -170,6 +172,18 @@
           justify-content: center;
         }
       }
+      @media (max-width: 600px) {
+            .logo-img {
+              display: block;
+              margin: 126px auto;
+              width: 100%;
+              height: auto;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+            }
+        }
     </style>
   </head>
   <body>
@@ -228,7 +242,7 @@
     </header>
     <!-- Header End-->
 
-    <div class="container">
+    <div class="container" style="width: auto;">
       <div class="content">
         <div class="header-with-logo">
           <img
